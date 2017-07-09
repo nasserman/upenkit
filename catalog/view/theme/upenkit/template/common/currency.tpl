@@ -1,6 +1,4 @@
 <?php if (count($currencies) > 1) { ?>
-
-
 <li>
 
     <a href="#">
