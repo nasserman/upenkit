@@ -46,8 +46,9 @@
 </head>
 <body class="<?php echo $class; ?>">
 
-    <nav class="uk-navbar-container" uk-sticky="bottom: #offset">
 
+<header>
+    <nav class="uk-navbar-container" uk-sticky="bottom: #offset">
         <div class="uk-container">
 
             <nav class="uk-navbar-container" uk-navbar>
@@ -110,13 +111,11 @@
             </nav>
 
         </div>
-
     </nav>
-
 
     <div class="uk-cover-container">
         <canvas width="100%" height="200px"></canvas>
-        <img uk-cover src="https://getuikit.com/docs/images/dark.jpg" alt="">
+        <img uk-cover src="catalog/view/theme/upenkit/image/header.jpg" alt="">
         <div class="uk-overlay uk-position-center">
             <div id="logo">
               <?php if ($logo) { ?>
@@ -127,7 +126,6 @@
             </div>
         </div>
     </div>
-
 
     <nav class="uk-navbar-container" id="menu">
         <div class="uk-container">
@@ -169,28 +167,9 @@
                         <?php } ?>
                     </ul>
                 </div>
+
+                <?php echo $search; ?>
             </nav>
         </div>
     </nav>
-
-
-
-
-
-
-
-
-
-<!-- ======================================================================= -->
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-
-      </div>
-      <div class="col-sm-5"><?php echo $search; ?>
-      </div>
-      <div class="col-sm-3"></div>
-    </div>
-  </div>
 </header>

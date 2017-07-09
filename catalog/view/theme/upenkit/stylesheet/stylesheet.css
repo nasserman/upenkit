@@ -129,20 +129,9 @@ div.required .control-label:before {
 	margin: 0 0 10px 0;
 }
 /* search */
-#search {
-	margin-bottom: 10px;
-}
-#search .input-lg {
-	height: 40px;
-	line-height: 20px;
-	padding: 0 10px;
-}
-#search .btn-lg {
-	font-size: 15px;
-	line-height: 18px;
-	padding: 10px 35px;
-	text-shadow: 0 1px 0 #FFF;
-}
+#search input:focus{border:none;}
+#search button{background-color: #fff;border:1px solid #e5e5e5;border-left: 0px;}
+#search button:hover , #search button:focus, #search button:active{border:1px solid #e5e5e5;border-left: 0px;}
 /* cart */
 #cart {
 	margin-bottom: 10px;
