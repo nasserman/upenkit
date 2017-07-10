@@ -1,6 +1,6 @@
 <footer>
   <div class="uk-container">
-    <div class="row">
+    <div uk-grid>
       <?php if ($informations) { ?>
       <div class="col-sm-3">
         <h5><?php echo $text_information; ?></h5>

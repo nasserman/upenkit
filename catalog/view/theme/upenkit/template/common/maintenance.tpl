@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="uk-container">
-  <div class="row">
+  <div uk-grid>
     <div class="col-12"><?php echo $message; ?></div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="row">
+<div uk-grid>
   <div class="col-sm-6">
     <fieldset id="account">
       <legend><?php echo $text_your_details; ?></legend>

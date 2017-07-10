@@ -1,20 +1,14 @@
 <?php echo $header; ?>
 <div class="uk-container">
   <?php include_once("catalog/view/theme/upenkit/template/parts/breadcrumb.tpl"); ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+  <div uk-grid>
+      <?php include_once("catalog/view/theme/upenkit/template/parts/main_content_div.php"); ?>
+      <?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <h3><?php echo $text_location; ?></h3>
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="row">
+          <div uk-grid>
             <?php if ($image) { ?>
             <div class="col-sm-3"><img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" class="img-thumbnail" /></div>
             <?php } ?>
@@ -58,7 +52,7 @@
           </div>
           <div class="panel-collapse collapse" id="collapse-location<?php echo $location['location_id']; ?>">
             <div class="panel-body">
-              <div class="row">
+              <div uk-grid>
                 <?php if ($location['image']) { ?>
                 <div class="col-sm-3"><img src="<?php echo $location['image']; ?>" alt="<?php echo $location['name']; ?>" title="<?php echo $location['name']; ?>" class="img-thumbnail" /></div>
                 <?php } ?>

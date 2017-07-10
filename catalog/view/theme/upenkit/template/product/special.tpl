@@ -1,18 +1,12 @@
 <?php echo $header; ?>
 <div class="uk-container">
   <?php include_once("catalog/view/theme/upenkit/template/parts/breadcrumb.tpl"); ?>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+  <div uk-grid>
+      <?php include_once("catalog/view/theme/upenkit/template/parts/main_content_div.php"); ?>
+      <?php echo $content_top; ?>
       <h2><?php echo $heading_title; ?></h2>
       <?php if ($products) { ?>
-      <div class="row">
+      <div uk-grid>
         <div class="col-md-2 col-sm-6 hidden-xs">
           <div class="btn-group btn-group-sm">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
@@ -53,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div uk-grid>
         <?php foreach ($products as $product) { ?>
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
@@ -96,7 +90,7 @@
         </div>
         <?php } ?>
       </div>
-      <div class="row">
+      <div uk-grid>
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>
       </div>
