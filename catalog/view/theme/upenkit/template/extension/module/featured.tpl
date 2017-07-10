@@ -1,12 +1,15 @@
 <h3><?php echo $heading_title; ?></h3>
-<div class="row">
+<div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-3@l uk-grid-match" uk-grid>
   <?php foreach ($products as $product) { ?>
-  <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="product-thumb transition">
+  <div class="product-layout">
+    <div class="product-thumb transition uk-transition-toggle">
+
       <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
       <div class="caption">
         <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
+        <?php if(strlen($product['description']) > 3) { ?>
         <p><?php echo $product['description']; ?></p>
+        <?php } ?>
         <?php if ($product['rating']) { ?>
         <div class="rating">
           <?php for ($i = 1; $i <= 5; $i++) { ?>
@@ -30,12 +33,26 @@
           <?php } ?>
         </p>
         <?php } ?>
+        <div style="text-align:center;">
+            <button type="button" class="add-to-cart-button uk-button uk-button-primary" onclick="cart.add('<?php echo $product['product_id']; ?>');" uk-icon="icon: cart"><?php echo $button_cart; ?></button>
+        </div>
       </div>
-      <div class="button-group">
-        <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
+
+
+      <div class="buttons-group uk-transition-fade uk-transition-slide-bottom-small" style="text-align:center;">
+          <div>
+              <div class="uk-button-group">
+                <a href="<?php echo $product['href']; ?>" class="uk-button uk-button-default uk-button-small" uk-icon="icon: expand"></a>
+                <button type="button" class="uk-button uk-button-default uk-button-small" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" uk-icon="icon: heart"></button>
+                <button type="button" class="uk-button uk-button-default uk-button-small" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');" uk-icon="icon : settings"></button>
+              </div>
+          </div>
       </div>
+
+
+
+
+
     </div>
   </div>
   <?php } ?>

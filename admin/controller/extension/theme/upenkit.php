@@ -372,7 +372,8 @@ class ControllerExtensionThemeUpenkit extends Controller {
 		}
 
 		if (!$this->request->post['upenkit_product_description_length']) {
-			$this->error['product_description_length'] = $this->language->get('error_limit');
+			// $this->error['product_description_length'] = $this->language->get('error_limit');
+			$this->request->post['upenkit_product_description_length'] = 0;
 		}
 
 		if (!$this->request->post['upenkit_image_category_width'] || !$this->request->post['upenkit_image_category_height']) {
