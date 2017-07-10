@@ -1,10 +1,6 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
+<div class="uk-container">
+  <?php include_once("catalog/view/theme/upenkit/template/parts/breadcrumb.tpl"); ?>
   <?php if ($attention) { ?>
   <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
     <button type="button" class="close" data-dismiss="alert">&times;</button>

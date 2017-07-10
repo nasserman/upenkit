@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="uk-container uk-margin-medium-top">
+<div class="uk-container">
     <div uk-grid>
         <?php echo $column_left; ?>
         <?php if ($column_left && $column_right) { ?>

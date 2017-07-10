@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="uk-container">
   <div class="row">
     <div id="content" class="col-sm-9"><?php echo $content_top; ?>
 	  <div class="klarna-checkout-main"></div>

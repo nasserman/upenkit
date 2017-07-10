@@ -48,7 +48,7 @@
 <body class="<?php echo $class; ?>">
 
 
-<header>
+<header class="uk-margin-medium-bottom">
     <nav id="top-nav" class="uk-navbar-container" uk-sticky="bottom: #offset">
         <div class="uk-container">
 

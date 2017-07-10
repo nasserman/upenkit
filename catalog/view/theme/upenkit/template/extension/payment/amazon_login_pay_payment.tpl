@@ -1,5 +1,5 @@
 <?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
-<div class="container"><?php echo $content_top; ?>
+<div class="uk-container"><?php echo $content_top; ?>
 	<div style="text-align:center;">
 		<h3><?php echo $heading_payment; ?></h3>
 		<?php if(isset($amazon_login_pay_test)){ ?>
