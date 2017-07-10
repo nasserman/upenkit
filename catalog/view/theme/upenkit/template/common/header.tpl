@@ -34,6 +34,7 @@
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/theme/upenkit/js/common.js" type="text/javascript"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
@@ -48,10 +49,10 @@
 
 
 <header>
-    <nav class="uk-navbar-container" uk-sticky="bottom: #offset">
+    <nav id="top-nav" class="uk-navbar-container" uk-sticky="bottom: #offset">
         <div class="uk-container">
 
-            <nav class="uk-navbar-container" uk-navbar>
+            <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar >
 
                 <div class="uk-navbar-left">
                     <ul class="uk-navbar-nav">
