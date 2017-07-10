@@ -489,6 +489,17 @@ footer h5 {
 	font-family: FontAwesome;
 }
 /* product list */
+.products-thumb-list{
+	-webkit-columns: 250px 4;
+    -moz-columns: 250px 4;
+    columns: 250px 4;
+	-webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+	-webkit-column-rule: 1px solid #efefef; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid #efefef; /* Firefox */
+    column-rule: 1px solid #efefef;
+}
 .product-thumb {
 	margin-bottom: 20px;
 	overflow: auto;
@@ -496,6 +507,9 @@ footer h5 {
 	/*transition: 0.3s all;
 	background-color: #fff;*/
 	position: relative;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
 }
 .product-thumb:hover{
 	/*box-shadow: 0px 0px 10px 0px rgba(150,150,150,0.2);*/
