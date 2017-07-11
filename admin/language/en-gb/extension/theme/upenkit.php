@@ -1,7 +1,7 @@
 <?php
 // Heading
 $_['heading_title']                    = 'Upenkit Store Theme';
-$_['version']                          = '00.10';
+$_['version']                          = '00.11';
 
 // Text
 $_['text_theme']                       = 'Themes';

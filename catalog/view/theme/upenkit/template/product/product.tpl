@@ -24,85 +24,99 @@
             <?php } ?>
           </ul>
           <?php } ?>
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-description" data-toggle="tab"><?php echo $tab_description; ?></a></li>
-            <?php if ($attribute_groups) { ?>
-            <li><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
-            <?php } ?>
-            <?php if ($review_status) { ?>
-            <li><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></li>
-            <?php } ?>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
-            <?php if ($attribute_groups) { ?>
-            <div class="tab-pane" id="tab-specification">
-              <table class="table table-bordered">
-                <?php foreach ($attribute_groups as $attribute_group) { ?>
-                <thead>
-                  <tr>
-                    <td colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
-                  <tr>
-                    <td><?php echo $attribute['name']; ?></td>
-                    <td><?php echo $attribute['text']; ?></td>
-                  </tr>
-                  <?php } ?>
-                </tbody>
-                <?php } ?>
-              </table>
+
+
+            <div class="uk-margin-medium-top">
+                <ul class="uk-flex-center" uk-tab="animation: uk-animation-slide-bottom-small">
+                    <li class="uk-active"><a href="#tab-description"><?php echo $tab_description; ?></a></li>
+                    <?php if ($attribute_groups) { ?>
+                    <li><a href="#tab-specification"><?php echo $tab_attribute; ?></a></li>
+                    <?php } ?>
+                    <?php if ($review_status) { ?>
+                    <li><a href="#tab-review"><?php echo $tab_review; ?></a></li>
+                    <?php } ?>
+                </ul>
+
+                <ul class="uk-switcher uk-margin">
+                    <li id="tab-description"><?php echo $description; ?></li>
+
+                    <?php if ($attribute_groups) { ?>
+                    <li id="tab-specification">
+                        <table class="uk-table uk-table-divider uk-table-striped uk-table-small uk-table-middle">
+                            <?php foreach ($attribute_groups as $attribute_group) { ?>
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+                                <tr>
+                                    <td><?php echo $attribute['name']; ?></td>
+                                    <td><?php echo $attribute['text']; ?></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                            <?php } ?>
+                        </table>
+                    </li>
+                    <?php } ?>
+
+                    <?php if ($review_status) { ?>
+                    <div class="tab-pane" id="tab-review">
+
+                        <form class="uk-form-horizontal uk-margin-large" id="form-review">
+                            <div id="review"></div>
+                            <legend class="uk-legend"><?php echo $text_write; ?></legend>
+
+                            <?php if ($review_guest) { ?>
+                            <div class="uk-margin required">
+                                <label class="uk-form-label" for="input-name"><?php echo $entry_name; ?></label>
+                                <div class="uk-form-controls">
+                                    <input type="text" name="name" value="<?php echo $customer_name; ?>" id="input-name" class="uk-input" placeholder="<?php echo $entry_name; ?>" />
+                                </div>
+                            </div>
+                            <div class="uk-margin required">
+                                <label class="uk-form-label" for="input-review"><?php echo $entry_review; ?></label>
+                                <div class="uk-form-controls">
+                                    <textarea name="text" rows="5" id="input-review" class="uk-textarea"></textarea>
+                                    <div class="help-block"><?php echo $text_note; ?></div>
+                                </div>
+                            </div>
+                            <div class="uk-margin required">
+                                <label class="uk-form-label"><?php echo $entry_rating; ?></label>
+                                <div class="uk-form-controls">
+                                    &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
+                                    <input type="radio" class="uk-radio" name="rating" value="1" />
+                                    &nbsp;
+                                    <input type="radio" class="uk-radio" name="rating" value="2" />
+                                    &nbsp;
+                                    <input type="radio" class="uk-radio" name="rating" value="3" />
+                                    &nbsp;
+                                    <input type="radio" class="uk-radio" name="rating" value="4" />
+                                    &nbsp;
+                                    <input type="radio" class="uk-radio" name="rating" value="5" />
+                                    &nbsp;<?php echo $entry_good; ?>
+                                </div>
+                            </div>
+                            <?php echo $captcha; ?>
+                            <div class="buttons clearfix">
+                                <div class="uk-float-right">
+                                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="uk-button uk-button-primary"><?php echo $button_continue; ?></button>
+                                </div>
+                            </div>
+                            <?php } else { ?>
+                            <?php echo $text_login; ?>
+                            <?php } ?>
+                        </form>
+                    </div>
+                    <?php } ?>
+                </ul>
             </div>
-            <?php } ?>
-            <?php if ($review_status) { ?>
-            <div class="tab-pane" id="tab-review">
-              <form class="form-horizontal" id="form-review">
-                <div id="review"></div>
-                <h2><?php echo $text_write; ?></h2>
-                <?php if ($review_guest) { ?>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
-                    <input type="text" name="name" value="<?php echo $customer_name; ?>" id="input-name" class="form-control" />
-                  </div>
-                </div>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
-                    <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                    <div class="help-block"><?php echo $text_note; ?></div>
-                  </div>
-                </div>
-                <div class="form-group required">
-                  <div class="col-sm-12">
-                    <label class="control-label"><?php echo $entry_rating; ?></label>
-                    &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
-                    <input type="radio" name="rating" value="1" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="2" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="3" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="4" />
-                    &nbsp;
-                    <input type="radio" name="rating" value="5" />
-                    &nbsp;<?php echo $entry_good; ?></div>
-                </div>
-                <?php echo $captcha; ?>
-                <div class="buttons clearfix">
-                  <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
-                  </div>
-                </div>
-                <?php } else { ?>
-                <?php echo $text_login; ?>
-                <?php } ?>
-              </form>
-            </div>
-            <?php } ?>
-          </div>
+
+
+
+
         </div>
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'uk-width-1-2@s'; ?>
@@ -287,7 +301,7 @@
               <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
             </div>
             <?php if ($minimum > 1) { ?>
-            <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
+            <div class="uk-alert uk-alert-info"><i uk-icon="icon: info"></i> <?php echo $text_minimum; ?></div>
             <?php } ?>
           </div>
           <?php if ($review_status) { ?>
@@ -301,11 +315,6 @@
               <?php } ?>
               <?php } ?>
               <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
-            <hr>
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style" data-url="<?php echo $share; ?>"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
-            <!-- AddThis Button END -->
           </div>
           <?php } ?>
         </div>
@@ -352,7 +361,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 			$('#recurring-description').html('');
 		},
 		success: function(json) {
-			$('.alert, .text-danger').remove();
+			$('.uk-alert, .text-danger').remove();
 
 			if (json['success']) {
 				$('#recurring-description').html(json['success']);
@@ -369,13 +378,13 @@ $('#button-cart').on('click', function() {
 		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
 		beforeSend: function() {
-			$('#button-cart').button('loading');
+			$('#button-cart').text('loading');
 		},
 		complete: function() {
-			$('#button-cart').button('reset');
+			$('#button-cart').text('reset');
 		},
 		success: function(json) {
-			$('.alert, .text-danger').remove();
+			$('.uk-alert, .text-danger').remove();
 			$('.form-group').removeClass('has-error');
 
 			if (json['error']) {
@@ -400,11 +409,13 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                UIkit.notification({
+					message: "<span uk-icon='icon: check'></span> " + json['success'],
+					status: 'success',
+					pos: 'top-right'
+				});
 
-				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
+				$('#cart > a > div').html('<span id="cart-total"><i uk-icon="icon: cart;"></i> ' + json['total'] + '</span>');
 
 				$('#cart > ul').load('index.php?route=common/cart/info ul li');
 			}
@@ -455,10 +466,10 @@ $('button[id^=\'button-upload\']').on('click', function() {
 				contentType: false,
 				processData: false,
 				beforeSend: function() {
-					$(node).button('loading');
+					$(node).text('loading');
 				},
 				complete: function() {
-					$(node).button('reset');
+					$(node).text('reset');
 				},
 				success: function(json) {
 					$('.text-danger').remove();
@@ -501,20 +512,20 @@ $('#button-review').on('click', function() {
 		dataType: 'json',
 		data: $("#form-review").serialize(),
 		beforeSend: function() {
-			$('#button-review').button('loading');
+			$('#button-review').text('loading');
 		},
 		complete: function() {
-			$('#button-review').button('reset');
+			$('#button-review').text('reset');
 		},
 		success: function(json) {
-			$('.alert-success, .alert-danger').remove();
+			$('.uk-alert-success, .uk-alert-danger').remove();
 
 			if (json['error']) {
-				$('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+				$('#review').after('<div class="uk-alert uk-alert-danger"><i uk-icon="icon: warning"></i> ' + json['error'] + '</div>');
 			}
 
 			if (json['success']) {
-				$('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+				$('#review').after('<div class="uk-alert uk-alert-success"><i uk-icon="icon: check"></i> ' + json['success'] + '</div>');
 
 				$('input[name=\'name\']').val('');
 				$('textarea[name=\'text\']').val('');
