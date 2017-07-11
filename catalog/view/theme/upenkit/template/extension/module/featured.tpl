@@ -1,4 +1,4 @@
-<h3><?php echo $heading_title; ?></h3>
+<h3 class="uk-heading-line uk-text-center"><span><?php echo $heading_title; ?></span></h3>
 <div class="products-thumb-list" >
   <?php foreach ($products as $product) { ?>
   <div class="product-layout">

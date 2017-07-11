@@ -38,6 +38,9 @@ a {
 a:hover {
 	text-decoration: none;
 }
+a:focus {
+    outline: none;
+}
 legend {
 	font-size: 18px;
 	padding: 7px 0px
@@ -528,7 +531,7 @@ footer h5 {
 	position: absolute;
 	top:10%;
 	left:8%;
-	width: 52px;
+	width: 64px;
 }
 .product-thumb .buttons-group > div{
 	background-color: rgba(255,255,255,0.95);
@@ -754,4 +757,28 @@ h2.price {
 #top-nav .uk-navbar-item,
 #top-nav .uk-navbar-nav > li > a{
 	height: 50px;
+}
+
+
+/* magnific popup */
+.mfp-content figure{margin:0px;}
+img.mfp-img {
+    padding: 0px !important;
+    margin: 40px auto  !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+/* owl carousel */
+.owl-wrapper-outer {
+    box-shadow: none;
+    padding: 5px;
+}
+
+.product-images .owl-carousel .owl-item{
+	border-bottom: 1px solid rgba(0,0,0,0);
+	transition: 0.3s all;
+}
+.product-images .owl-carousel .owl-item:hover{
+	border-bottom: 1px solid rgba(0,0,0,0.4);
 }

@@ -12,18 +12,34 @@
         <?php $class = 'uk-width-2-3@s'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
-          <?php if ($thumb || $images) { ?>
-          <ul class="thumbnails">
-            <?php if ($thumb) { ?>
-            <li><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-            <?php } ?>
-            <?php if ($images) { ?>
-            <?php foreach ($images as $image) { ?>
-            <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
-            <?php } ?>
-            <?php } ?>
-          </ul>
-          <?php } ?>
+
+            <div class="product-images">
+                <div class="product-main-image">
+                    <?php if ($thumb) { ?>
+                    <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="uk-align-center">
+                        <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" class="uk-align-center" />
+                    </a>
+                    <?php } ?>
+                </div>
+
+                <?php if ($images) { ?>
+                <div class="products-thumn-carousel owl-theme">
+                    <?php foreach ($images as $image) { ?>
+                    <div class="item" style="text-align:center;">
+                        <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" rel="thumbnails">
+                            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
+                <?php } ?>
+            </div>
+
+
+
+
+
+
 
 
             <div class="uk-margin-medium-top">
@@ -536,13 +552,29 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
-	$('.thumbnails').magnificPopup({
-		type:'image',
-		delegate: 'a',
-		gallery: {
-			enabled:true
-		}
-	});
+    $('.product-images').magnificPopup({
+        type:'image',
+        delegate: 'a',
+        gallery: {
+        	enabled:true
+        },
+        mainClass: 'mfp-with-zoom',
+
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out',
+            opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
+    });
+
+    $('.products-thumn-carousel').owlCarousel({
+        nav:true,
+        autoplay:true
+    });
 });
+
 //--></script>
 <?php echo $footer; ?>

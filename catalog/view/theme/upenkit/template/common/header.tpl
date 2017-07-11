@@ -18,7 +18,9 @@
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 
 <!-- UIKit +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <link rel="stylesheet" href="catalog/view/theme/upenkit/uikit/css/uikit.min.css" />
@@ -26,6 +28,9 @@
 <script src="catalog/view/theme/upenkit/uikit/js/uikit-icons.min.js"></script>
 <!-- UIKit +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
+
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/upenkit/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/upenkit/stylesheet/uikit-override.css" rel="stylesheet">
 
