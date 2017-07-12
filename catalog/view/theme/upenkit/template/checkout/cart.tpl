@@ -110,43 +110,49 @@
       <div class="uk-grid-divider uk-child-width-1-2@s uk-margin-large-top" uk-grid>
 
           <div>
-              <div class="uk-card uk-card-default uk-card-body">
-                <table class="table table-bordered">
-                  <?php foreach ($totals as $total) { ?>
-                  <tr>
-                    <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
-                    <td class="text-right"><?php echo $total['text']; ?></td>
-                  </tr>
-                  <?php } ?>
-                </table>
+              <div class="uk-card uk-card-default">
+                  <div class="uk-card-body">
+                    <table class="uk-table uk-table-divider uk-table-striped">
+                        <?php foreach ($totals as $total) { ?>
+                        <tr>
+                            <td class="text-left"><strong><?php echo $total['title']; ?>:</strong></td>
+                            <td class="text-right"><?php echo $total['text']; ?></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                  </div>
+                  <div class="uk-card-footer">
+                    <div class="uk-button-group">
+                        <a href="<?php echo $checkout; ?>" class="uk-button uk-button-primary"><?php echo $button_checkout; ?></a>
+                        <a href="<?php echo $continue; ?>" class="uk-button uk-button-default"><?php echo $button_shopping; ?></a>
+                    </div>
+                  </div>
               </div>
           </div>
 
           <?php if ($modules) { ?>
           <div>
-              <div class="uk-card uk-card-default uk-card-body">
-                  <h3><?php echo $text_next; ?></h3>
-                  <p><?php echo $text_next_choice; ?></p>
-                  <ul uk-accordion>
+              <div class="uk-card uk-card-default">
+                <div class="uk-card-header">
+                    <h3 class="uk-card-title"><?php echo $text_next; ?></h3>
+                </div>
+                <div class="uk-card-body">
+                    <p><?php echo $text_next_choice; ?></p>
+                    <ul uk-accordion>
                     <?php foreach ($modules as $module) { ?>
                     <?php echo $module; ?>
                     <?php } ?>
-                  </ul>
+                    </ul>
+                </div>
               </div>
           </div>
           <?php } ?>
       </div>
 
 
-      <br />
-      <div uk-grid>
 
-      </div>
-      <div class="buttons clearfix">
-        <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
-      </div>
-      <?php echo $content_bottom; ?></div>
+      <?php echo $content_bottom; ?>
+    </div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>
