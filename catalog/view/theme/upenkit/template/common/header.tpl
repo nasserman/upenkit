@@ -24,6 +24,7 @@
 
 <!-- UIKit +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <link rel="stylesheet" href="catalog/view/theme/upenkit/uikit/css/uikit.min.css" />
+<link href="catalog/view/theme/upenkit/stylesheet/uikit-theme/upenkit.css" rel="stylesheet">
 <script src="catalog/view/theme/upenkit/uikit/js/uikit.min.js"></script>
 <script src="catalog/view/theme/upenkit/uikit/js/uikit-icons.min.js"></script>
 <!-- UIKit +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

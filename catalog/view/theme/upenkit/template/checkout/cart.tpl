@@ -32,12 +32,12 @@
           <table class="uk-table uk-table-divider uk-table-middle uk-table-small">
             <thead>
               <tr>
-                <th class="uk-text-nowrap"><?php echo $column_image; ?></th>
+                <th class="uk-text-nowrap uk-table-shrink"><?php echo $column_image; ?></th>
                 <th class="uk-text-nowrap"><?php echo $column_name; ?></th>
                 <th class="uk-text-nowrap"><?php echo $column_model; ?></th>
-                <th class="uk-text-nowrap"><?php echo $column_quantity; ?></th>
-                <th class="uk-text-nowrap"><?php echo $column_price; ?></th>
-                <th class="uk-text-nowrap"><?php echo $column_total; ?></th>
+                <th class="uk-text-nowrap uk-width-small"><?php echo $column_quantity; ?></th>
+                <th class="uk-text-nowrap uk-width-small uk-text-right"><?php echo $column_price; ?></th>
+                <th class="uk-text-nowrap uk-width-small uk-text-right"><?php echo $column_total; ?></th>
               </tr>
             </thead>
             <tbody>
@@ -84,22 +84,22 @@
                         <input type="number" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="uk-input uk-form-width-small" style="padding-left:70px;" />
                     </div>
                 </td>
-                <td class="text-right"><?php echo $product['price']; ?></td>
-                <td class="text-right"><?php echo $product['total']; ?></td>
+                <td class="uk-text-right"><?php echo $product['price']; ?></td>
+                <td class="uk-text-right"><?php echo $product['total']; ?></td>
               </tr>
               <?php } ?>
               <?php foreach ($vouchers as $voucher) { ?>
               <tr>
                 <td></td>
-                <td class="text-left"><?php echo $voucher['description']; ?></td>
-                <td class="text-left"></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                <td class="uk-text-left"><?php echo $voucher['description']; ?></td>
+                <td class="uk-text-left"></td>
+                <td class="uk-text-left"><div class="input-group btn-block" style="max-width: 200px;">
                     <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
                     <span class="input-group-btn">
                     <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger" onclick="voucher.remove('<?php echo $voucher['key']; ?>');"><i class="fa fa-times-circle"></i></button>
                     </span></div></td>
-                <td class="text-right"><?php echo $voucher['amount']; ?></td>
-                <td class="text-right"><?php echo $voucher['amount']; ?></td>
+                <td class="uk-text-right"><?php echo $voucher['amount']; ?></td>
+                <td class="uk-text-right"><?php echo $voucher['amount']; ?></td>
               </tr>
               <?php } ?>
             </tbody>
@@ -115,8 +115,8 @@
                     <table class="uk-table uk-table-divider uk-table-striped">
                         <?php foreach ($totals as $total) { ?>
                         <tr>
-                            <td class="text-left"><strong><?php echo $total['title']; ?>:</strong></td>
-                            <td class="text-right"><?php echo $total['text']; ?></td>
+                            <td class="uk-text-left"><strong><?php echo $total['title']; ?>:</strong></td>
+                            <td class="uk-text-right"><?php echo $total['text']; ?></td>
                         </tr>
                         <?php } ?>
                     </table>
