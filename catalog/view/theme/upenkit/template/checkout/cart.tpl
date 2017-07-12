@@ -106,27 +106,41 @@
           </table>
         </div>
       </form>
-      <?php if ($modules) { ?>
-      <h2><?php echo $text_next; ?></h2>
-      <p><?php echo $text_next_choice; ?></p>
-      <div class="panel-group" id="accordion">
-        <?php foreach ($modules as $module) { ?>
-        <?php echo $module; ?>
-        <?php } ?>
+
+      <div class="uk-grid-divider uk-child-width-1-2@s uk-margin-large-top" uk-grid>
+
+          <div>
+              <div class="uk-card uk-card-default uk-card-body">
+                <table class="table table-bordered">
+                  <?php foreach ($totals as $total) { ?>
+                  <tr>
+                    <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
+                    <td class="text-right"><?php echo $total['text']; ?></td>
+                  </tr>
+                  <?php } ?>
+                </table>
+              </div>
+          </div>
+
+          <?php if ($modules) { ?>
+          <div>
+              <div class="uk-card uk-card-default uk-card-body">
+                  <h3><?php echo $text_next; ?></h3>
+                  <p><?php echo $text_next_choice; ?></p>
+                  <ul uk-accordion>
+                    <?php foreach ($modules as $module) { ?>
+                    <?php echo $module; ?>
+                    <?php } ?>
+                  </ul>
+              </div>
+          </div>
+          <?php } ?>
       </div>
-      <?php } ?>
+
+
       <br />
       <div uk-grid>
-        <div class="col-sm-4 col-sm-offset-8">
-          <table class="table table-bordered">
-            <?php foreach ($totals as $total) { ?>
-            <tr>
-              <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
-              <td class="text-right"><?php echo $total['text']; ?></td>
-            </tr>
-            <?php } ?>
-          </table>
-        </div>
+
       </div>
       <div class="buttons clearfix">
         <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
