@@ -2,7 +2,7 @@
 <modification>
     <name>Upenkit</name>
     <code>upenkit_modifications</code>
-    <version>00.11</version>
+    <version>00.13</version>
     <author>Nasser Mansouri</author>
     <link>http://ressan.ir</link>
     <file path="catalog/controller/common/header.php">
@@ -13,6 +13,7 @@
             <add position="before"><![CDATA[
             $this->load->model('setting/setting');
     		$setting_info = $this->model_setting_setting->getSetting('upenkit');
+            $data["upenkit_header_image_path"] = $setting_info["upenkit_header_image_path"] ? $setting_info["upenkit_header_image_path"] : "catalog/view/theme/upenkit/image/header.jpg";
             ]]></add>
         </operation>
     </file>

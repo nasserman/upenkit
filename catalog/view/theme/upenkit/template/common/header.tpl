@@ -122,7 +122,7 @@
 
     <div class="uk-cover-container">
         <canvas width="100%" height="200px"></canvas>
-        <img uk-cover src="catalog/view/theme/upenkit/image/header.jpg" alt="">
+        <img uk-cover src="<?php echo $upenkit_header_image_path; ?>" alt="">
         <div class="uk-overlay uk-position-center">
             <div id="logo">
               <?php if ($logo) { ?>

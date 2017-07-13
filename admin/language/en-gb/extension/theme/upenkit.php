@@ -1,7 +1,7 @@
 <?php
 // Heading
 $_['heading_title']                    = 'Upenkit Store Theme';
-$_['version']                          = '00.17';
+$_['version']                          = '00.18';
 
 // Text
 $_['text_theme']                       = 'Themes';
@@ -10,6 +10,7 @@ $_['text_edit']                        = 'Edit Upenkit (ver. '.$_['version'].') 
 $_['text_general']                     = 'General';
 $_['text_product']                     = 'Products';
 $_['text_image']                       = 'Images';
+$_['text_template_other_settings'] = 'Template\'s other settings';
 
 // Entry
 $_['entry_directory']                  = 'Theme Directory';
@@ -28,11 +29,13 @@ $_['entry_image_cart']                 = 'Cart Image Size (W x H)';
 $_['entry_image_location']             = 'Store Image Size (W x H)';
 $_['entry_width']                      = 'Width';
 $_['entry_height']                     = 'Height';
+$_['entry_header_image_path'] = 'Header Image Path';
 
 // Help
 $_['help_directory'] 	               = 'This field is only to enable older themes to be compatible with the new theme system. You can set the theme directory to use on the image size settings defined here.';
 $_['help_product_limit'] 	           = 'Determines how many catalog items are shown per page (products, categories, etc)';
 $_['help_product_description_length']  = 'In the list view, short description character limit (categories, special etc)';
+$_['help_header_image_path']  = 'The absolute path or url of image to load in header of template';
 
 // Error
 $_['error_permission']                 = 'Warning: You do not have permission to modify the upenkit store theme!';

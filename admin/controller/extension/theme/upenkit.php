@@ -27,6 +27,7 @@ class ControllerExtensionThemeUpenkit extends Controller {
 		$data['text_product'] = $this->language->get('text_product');
 		$data['text_image'] = $this->language->get('text_image');
 		$data['text_general'] = $this->language->get('text_general');
+		$data['text_template_other_settings'] = $this->language->get('text_template_other_settings');
 
 		$data['entry_directory'] = $this->language->get('entry_directory');
 		$data['entry_status'] = $this->language->get('entry_status');
@@ -44,10 +45,12 @@ class ControllerExtensionThemeUpenkit extends Controller {
 		$data['entry_image_location'] = $this->language->get('entry_image_location');
 		$data['entry_width'] = $this->language->get('entry_width');
 		$data['entry_height'] = $this->language->get('entry_height');
+		$data['entry_header_image_path'] = $this->language->get('entry_header_image_path');
 
 		$data['help_product_limit'] = $this->language->get('help_product_limit');
 		$data['help_product_description_length'] = $this->language->get('help_product_description_length');
 		$data['help_directory'] = $this->language->get('help_directory');
+		$data['help_header_image_path'] = $this->language->get('help_header_image_path');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
@@ -355,6 +358,15 @@ class ControllerExtensionThemeUpenkit extends Controller {
 			$data['upenkit_image_location_height'] = 50;
 		}
 
+		if (isset($this->request->post['upenkit_header_image_path'])) {
+			$data['upenkit_header_image_path'] = $this->request->post['upenkit_header_image_path'];
+		} elseif (isset($setting_info['upenkit_header_image_path'])) {
+			$data['upenkit_header_image_path'] = $this->config->get('upenkit_header_image_path');
+		} else {
+			$data['upenkit_header_image_path'] = "";
+		}
+
+
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
@@ -372,7 +384,6 @@ class ControllerExtensionThemeUpenkit extends Controller {
 		}
 
 		if (!$this->request->post['upenkit_product_description_length']) {
-			// $this->error['product_description_length'] = $this->language->get('error_limit');
 			$this->request->post['upenkit_product_description_length'] = 0;
 		}
 
@@ -414,6 +425,10 @@ class ControllerExtensionThemeUpenkit extends Controller {
 
 		if (!$this->request->post['upenkit_image_location_width'] || !$this->request->post['upenkit_image_location_height']) {
 			$this->error['image_location'] = $this->language->get('error_image_location');
+		}
+
+		if (!$this->request->post['upenkit_header_image_path']) {
+			$this->request->post['upenkit_header_image_path'] = "";
 		}
 
 		return !$this->error;
