@@ -3,6 +3,9 @@
 
 # But not these files...
 !.gitignore
+!LICENSE
+!README.md
+
 !system/upenkit.ocmod.xml
 !admin/controller/extension/theme/upenkit.php
 !admin/language/en-gb/extension/theme/upenkit.php
@@ -19,5 +22,3 @@
 !catalog/view/theme/upenkit/*/*/*/*/*/*/*/*/*
 !catalog/view/theme/upenkit/*/*/*/*/*/*/*/*/*/*
 !catalog/view/theme/upenkit/*/*/*/*/*/*/*/*/*/*/*
-
-!*/
