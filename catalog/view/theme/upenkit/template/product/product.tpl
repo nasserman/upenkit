@@ -23,7 +23,7 @@
                 </div>
 
                 <?php if ($images) { ?>
-                <div class="products-thumn-carousel owl-theme">
+                <div class="products-thumn-carousel owl-carousel owl-theme">
                     <?php foreach ($images as $image) { ?>
                     <div class="item" style="text-align:center;">
                         <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" rel="thumbnails">
@@ -571,8 +571,10 @@ $(document).ready(function() {
     });
 
     $('.products-thumn-carousel').owlCarousel({
-        nav:true,
-        autoplay:true
+        nav:false,
+        autoplay:true,
+        autoWidth:true,
+        margin: 10
     });
 });
 

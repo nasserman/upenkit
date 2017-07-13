@@ -32,6 +32,7 @@
 
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="catalog/view/javascript/jquery/owl-carousel/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/upenkit/stylesheet/stylesheet.css" rel="stylesheet">
 <link href="catalog/view/theme/upenkit/stylesheet/uikit-override.css" rel="stylesheet">
 
