@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Upenkit</name>
+    <code>upenkit_modifications</code>
+    <version>00.11</version>
+    <author>Nasser Mansouri</author>
+    <link>http://ressan.ir</link>
+    <file path="catalog/controller/common/header.php">
+        <operation>
+            <search><![CDATA[
+            return $this->load->view('common/header', $data);
+            ]]></search>
+            <add position="before"><![CDATA[
+            $this->load->model('setting/setting');
+    		$setting_info = $this->model_setting_setting->getSetting('upenkit');
+            ]]></add>
+        </operation>
+    </file>
+</modification>
