@@ -9,7 +9,7 @@
 !/README.md
 
 
-/system/*/
+/system/*
 !/system/upenkit.ocmod.xml
 
 /image/
@@ -59,8 +59,3 @@
 !/admin/view/template/extension/theme/
 /admin/view/template/extension/theme/*/
 !/admin/view/template/extension/theme/upenkit.tpl
-
-
-
-
-#/admin/controller/extension/module/productswiperforupenkit.php
