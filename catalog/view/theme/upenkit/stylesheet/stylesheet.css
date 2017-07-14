@@ -782,3 +782,10 @@ img.mfp-img {
 .product-images .owl-carousel .owl-item:hover{
 	border-bottom: 1px solid rgba(0,0,0,0.4);
 }
+
+
+/* simple light box */
+.sl-overlay {
+    background: #fff;
+    opacity: 0.95;
+}

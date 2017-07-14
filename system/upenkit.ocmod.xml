@@ -2,7 +2,7 @@
 <modification>
     <name>Upenkit</name>
     <code>upenkit_modifications</code>
-    <version>00.13</version>
+    <version>00.14</version>
     <author>Nasser Mansouri</author>
     <link>http://ressan.ir</link>
     <file path="catalog/controller/common/header.php">
@@ -14,6 +14,17 @@
             $this->load->model('setting/setting');
     		$setting_info = $this->model_setting_setting->getSetting('upenkit');
             $data["upenkit_header_image_path"] = $setting_info["upenkit_header_image_path"] ? $setting_info["upenkit_header_image_path"] : "catalog/view/theme/upenkit/image/header.jpg";
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/controller/product/product.php">
+        <operation>
+            <search><![CDATA[
+            $this->document->setTitle($product_info['meta_title']);
+            ]]></search>
+            <add position="after"><![CDATA[
+            $this->document->addScript('catalog/view/theme/upenkit/js/simplelightbox/simple-lightbox.min.js');
+            $this->document->addStyle('catalog/view/theme/upenkit/js/simplelightbox/simplelightbox.min.css');
             ]]></add>
         </operation>
     </file>

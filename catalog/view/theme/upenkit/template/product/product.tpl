@@ -552,22 +552,29 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
-    $('.product-images').magnificPopup({
-        type:'image',
-        delegate: 'a',
-        gallery: {
-        	enabled:true
-        },
-        mainClass: 'mfp-with-zoom',
+    // $('.product-images').magnificPopup({
+    //     type:'image',
+    //     delegate: 'a',
+    //     gallery: {
+    //     	enabled:true
+    //     },
+    //     mainClass: 'mfp-with-zoom',
+    //
+    //     zoom: {
+    //         enabled: true,
+    //         duration: 300,
+    //         easing: 'ease-in-out',
+    //         opener: function(openerElement) {
+    //             return openerElement.is('img') ? openerElement : openerElement.find('img');
+    //         }
+    //     }
+    // });
 
-        zoom: {
-            enabled: true,
-            duration: 300,
-            easing: 'ease-in-out',
-            opener: function(openerElement) {
-                return openerElement.is('img') ? openerElement : openerElement.find('img');
-            }
-        }
+    // $(".js-smartPhoto").smartPhoto({resizeStyle:"fit"});
+
+    var lightbox = $('.product-images a').simpleLightbox({
+        captions: false,
+        closeText: "<span uk-icon=\"icon: close\"></span>"
     });
 
     $('.products-thumn-carousel').owlCarousel({
