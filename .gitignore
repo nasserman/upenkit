@@ -9,8 +9,7 @@
 !/README.md
 
 
-/system/
-/system/*
+/system/*/
 !/system/upenkit.ocmod.xml
 
 /image/
