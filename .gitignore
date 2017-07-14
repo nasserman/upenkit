@@ -14,11 +14,11 @@
 
 /image/
 
-/catalog/*/
+/catalog/*
 !/catalog/view/
-/catalog/view/*/
+/catalog/view/*
 !/catalog/view/theme/
-/catalog/view/theme/*/
+/catalog/view/theme/*
 !/catalog/view/theme/upenkit/
 
 /admin/*
