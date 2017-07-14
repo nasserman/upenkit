@@ -23,14 +23,20 @@
                 </div>
 
                 <?php if ($images) { ?>
-                <div class="products-thumn-carousel owl-carousel owl-theme">
-                    <?php foreach ($images as $image) { ?>
-                    <div class="item" style="text-align:center;">
-                        <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" rel="thumbnails">
-                            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
-                        </a>
+                <div style="position:relative;">
+                    <div class="products-thumn-carousel swiper-container">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($images as $image) { ?>
+                            <div class="swiper-slide" style="text-align:center;">
+                                <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" rel="thumbnails">
+                                    <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                                </a>
+                            </div>
+                            <?php } ?>
+                        </div>
                     </div>
-                    <?php } ?>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
                 <?php } ?>
             </div>
@@ -366,6 +372,16 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+
+
+<style>
+.products-thumn-carousel{
+    margin-right: 50px;
+    margin-left: 50px;
+}
+</style>
+
+
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
@@ -577,12 +593,39 @@ $(document).ready(function() {
         closeText: "<span uk-icon=\"icon: close\"></span>"
     });
 
-    $('.products-thumn-carousel').owlCarousel({
-        nav:false,
-        autoplay:true,
-        autoWidth:true,
-        margin: 10
+    var mySwiper = new Swiper ('.products-thumn-carousel', {
+        loop: false,
+        autoplay: 2000,
+        effect: "slide",
+        spaceBetween: 10,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 6,
+        breakpoints:{
+            320: {
+                slidesPerView: 1
+            },
+            480: {
+                slidesPerView: 2
+            },
+            640: {
+                slidesPerView: 3
+            },
+            900: {
+                slidesPerView: 4
+            },
+            1200: {
+                slidesPerView: 5
+            }
+        }
     });
+
+    // $('.products-thumn-carousel').owlCarousel({
+    //     nav:false,
+    //     autoplay:true,
+    //     autoWidth:true,
+    //     margin: 10
+    // });
 });
 
 //--></script>
