@@ -24,38 +24,38 @@
 /admin/*
 
 !/admin/controller/
-/admin/controller/*/
+/admin/controller/*
 !/admin/controller/extension/
-/admin/controller/extension/*/
+/admin/controller/extension/*
 !/admin/controller/extension/theme/
-/admin/controller/extension/theme/*/
+/admin/controller/extension/theme/*
 !/admin/controller/extension/theme/upenkit.php
 
 !/admin/language/
-/admin/language/*/
+/admin/language/*
 !/admin/language/en-gb/
 !/admin/language/fa-ir/
 
-/admin/language/en-gb/*/
+/admin/language/en-gb/*
 !/admin/language/en-gb/extension/
-/admin/language/en-gb/extension/*/
+/admin/language/en-gb/extension/*
 !/admin/language/en-gb/extension/theme/
-/admin/language/en-gb/extension/theme/*/
+/admin/language/en-gb/extension/theme/*
 !/admin/language/en-gb/extension/theme/upenkit.php
 
-/admin/language/fa-ir/*/
+/admin/language/fa-ir/*
 !/admin/language/fa-ir/extension/
-/admin/language/fa-ir/extension/*/
+/admin/language/fa-ir/extension/*
 !/admin/language/fa-ir/extension/theme/
-/admin/language/fa-ir/extension/theme/*/
+/admin/language/fa-ir/extension/theme/*
 !/admin/language/fa-ir/extension/theme/upenkit.php
 
 !/admin/view/
-/admin/view/*/
+/admin/view/*
 !/admin/view/template/
-/admin/view/template/*/
+/admin/view/template/*
 !/admin/view/template/extension/
-/admin/view/template/extension/*/
+/admin/view/template/extension/*
 !/admin/view/template/extension/theme/
-/admin/view/template/extension/theme/*/
+/admin/view/template/extension/theme/*
 !/admin/view/template/extension/theme/upenkit.tpl
